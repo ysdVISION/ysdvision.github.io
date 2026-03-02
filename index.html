@@ -1,194 +1,507 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Prologue by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Youktik Sajjan | AI ML Systems Portfolio</title>
+  <meta name="description" content="AI/ML systems portfolio of Youktik Sajjan showcasing projects, cultural involvement, and music integration."/>
+  <meta name="author" content="Youktik Sajjan"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: #0f1115;
+      color: #f2f2f2;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(58,203,122,0.3); color: #fff; }
 
-		<!-- Header -->
-			<div id="header">
+    /* ========== COLOR VARIABLES ========== */
+    :root {
+      --bg: #0f1115;
+      --surface: #1a1d24;
+      --card: #222630;
+      --accent: #3acb7a;
+      --glow: rgba(58,203,122,0.4);
+      --text: #f2f2f2;
+      --text-secondary: #a0a7b5;
+    }
 
-				<div class="top">
+    /* ========== TYPOGRAPHY ========== */
+    h1, h2, h3, h4 { font-family: 'Press Start 2P', monospace; }
+    h1 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.6; }
+    h2 { font-size: clamp(0.85rem, 2vw, 1.2rem); line-height: 1.6; margin-bottom: 1.5rem; color: var(--accent); }
+    h3 { font-size: clamp(0.65rem, 1.2vw, 0.8rem); line-height: 1.8; }
+    p { color: var(--text-secondary); font-size: 1rem; }
+    a { color: var(--accent); text-decoration: none; transition: all 0.3s; }
+    a:hover { color: #fff; }
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg"  style="width: 47px; height: 61px;" alt="hi" /></span>
-							<h1 id="title">Youktik Sajjan</h1>
-							<p>MS (3rd) at IISER-K</p>
-						</div>
+    /* ========== NAVIGATION ========== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(15,17,21,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(58,203,122,0.1);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.7rem; color: var(--accent);
+      letter-spacing: 1px;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;
+      position: relative; padding: 4px 0;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+      background: var(--accent); transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .hamburger {
+      display: none; cursor: pointer; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px; background: var(--text); transition: 0.3s;
+      display: block;
+    }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#biology" id="biology-link"><span class="icon solid fa-dna">Biology</span></a></li>
-								<li><a href="#notes" id="notes-link"><span class="icon solid fa-book">Notes</span></a></li>
-								<li><a href="#music" id="music-link"><span class="icon solid fa-music">Music</span></a></li>
-							</ul>
-						</nav>
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; position: absolute;
+        top: 60px; left: 0; right: 0; background: rgba(15,17,21,0.98);
+        padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid rgba(58,203,122,0.1);
+      }
+      .nav-links.open { display: flex; }
+    }
 
-				</div>
+    /* ========== SECTIONS ========== */
+    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-divider {
+      width: 60px; height: 3px; background: var(--accent); margin: 0 auto 3rem;
+      box-shadow: 0 0 12px var(--glow);
+    }
 
-				<div class="bottom">
+    /* ========== HERO ========== */
+    #hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding-top: 80px;
+    }
+    #hero h1 { margin-bottom: 1rem; letter-spacing: 4px; }
+    #hero .subtitle {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.5rem, 1vw, 0.7rem);
+      color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 2px;
+    }
+    #hero .tagline {
+      font-size: 1.1rem; color: var(--text-secondary);
+      max-width: 600px; margin-bottom: 2.5rem;
+    }
+    .hero-btn {
+      display: inline-block; padding: 12px 32px;
+      border: 2px solid var(--accent); color: var(--accent);
+      font-family: 'Press Start 2P', monospace; font-size: 0.6rem;
+      letter-spacing: 1px; border-radius: 4px;
+      transition: all 0.3s; background: transparent;
+      cursor: pointer;
+    }
+    .hero-btn:hover {
+      background: var(--accent); color: var(--bg);
+      box-shadow: 0 0 20px var(--glow);
+    }
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							
-				
-							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://www.instagram.com/s_youktik/?igsh=dG52ZnA1MWtrYTVw" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://open.spotify.com/user/2ocv81kwqr3kcxwg55jz05w7a?si=lOR2EpxDQuyJwX1v3r1T4g" class="icon brands fa-spotify"><span class="label">Twitter</span></a></li>
-							<li><a href="mailto:ys22ms059@iiserkol.ac.in" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							<li><a href="https://x.com/YouktikSajjan?t=0BiOG6HIhirXte9nxiSjaA&s=09" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						</ul>
+    /* ========== ABOUT ========== */
+    #about .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      align-items: start;
+    }
+    #about .about-text p { margin-bottom: 1rem; }
+    #about .philosophy {
+      background: var(--surface); padding: 2rem; border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      box-shadow: 4px 4px 0 rgba(58,203,122,0.08);
+    }
+    #about .philosophy h3 { color: var(--accent); margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      #about .about-grid { grid-template-columns: 1fr; }
+    }
 
-				</div>
+    /* ========== PROJECTS ========== */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card); border-radius: 8px; padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent); transform: scaleX(0);
+      transition: transform 0.3s; transform-origin: left;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(58,203,122,0.12);
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card h3 { color: var(--text); margin-bottom: 0.5rem; font-size: 0.7rem; }
+    .project-card .tech {
+      font-size: 0.8rem; color: var(--accent); margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .project-card p { font-size: 0.9rem; margin-bottom: 1rem; }
+    .project-card .card-link {
+      font-size: 0.85rem; color: var(--accent); display: inline-flex;
+      align-items: center; gap: 6px;
+    }
+    .project-card .card-link:hover { color: #fff; }
+    .section-footer { text-align: center; margin-top: 2rem; color: var(--text-secondary); }
 
-			</div>
+    /* ========== CULTURAL / TIMELINE ========== */
+    .timeline { position: relative; padding: 2rem 0; }
+    .timeline::before {
+      content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 2px; background: var(--accent);
+      box-shadow: 0 0 12px var(--glow); transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex; width: 100%; margin-bottom: 3rem;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) { justify-content: flex-start; padding-right: calc(50% + 2rem); }
+    .timeline-item:nth-child(even) { justify-content: flex-end; padding-left: calc(50% + 2rem); }
+    .timeline-dot {
+      position: absolute; left: 50%; top: 24px; width: 14px; height: 14px;
+      background: var(--accent); border-radius: 50%; transform: translateX(-50%);
+      box-shadow: 0 0 12px var(--glow); z-index: 1;
+    }
+    .timeline-content {
+      background: var(--card); padding: 1.5rem 2rem; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+    }
+    .timeline-content h3 { color: var(--accent); margin-bottom: 0.75rem; }
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item { padding-right: 0 !important; padding-left: 3rem !important; justify-content: flex-start !important; }
+      .timeline-dot { left: 20px; }
+    }
 
-		<!-- Main -->
-			<div id="main">
+    /* ========== MUSIC ========== */
+    .music-section { background: var(--surface); border-radius: 12px; padding: 3rem; margin-top: 2rem; }
+    .albums-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem; margin-top: 1.5rem;
+    }
+    .album-card {
+      background: var(--card); border-radius: 8px; overflow: hidden;
+      transition: transform 0.3s; cursor: pointer;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+    }
+    .album-card:hover { transform: perspective(600px) rotateY(-5deg) rotateX(3deg) scale(1.02); }
+    .album-card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .album-card .album-info { padding: 0.75rem; }
+    .album-card .album-info h4 { font-size: 0.5rem; color: var(--text); font-family: 'Press Start 2P', monospace; }
+    .album-card .album-info p { font-size: 0.8rem; margin-top: 4px; }
+    .spotify-embed { margin-top: 2rem; border-radius: 12px; overflow: hidden; }
+    .spotify-embed iframe { border-radius: 12px; }
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+    /* ========== CV SECTION ========== */
+    #cv { text-align: center; }
+    #cv .cv-frame-wrapper {
+      background: var(--surface); border-radius: 12px; overflow: hidden;
+      margin-top: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    #cv iframe { width: 100%; height: 85vh; border: none; }
+    .cv-download {
+      display: inline-block; margin-top: 1.5rem;
+      padding: 10px 28px; border: 2px solid var(--accent);
+      color: var(--accent); font-family: 'Press Start 2P', monospace;
+      font-size: 0.55rem; border-radius: 4px; transition: all 0.3s;
+    }
+    .cv-download:hover {
+      background: var(--accent); color: var(--bg);
+      box-shadow: 0 0 16px var(--glow);
+    }
 
-							<header>
-								<h2 class="alt">Hi!<strong> I'm Youktik</strong>, a 3rd year BS-MS student at  
-								<a href="https://www.iiserkol.ac.in/web/en/#gsc.tab=0">IISER-K</a>.</h2><h3> Currently I'm pursuing Biology as Major, and interests are Disease biology, Philosophy, Computation.</h3>
-								<p><br />
-								</p>
-							</header>
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    footer p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
+    footer .footer-links { display: flex; justify-content: center; gap: 1.5rem; }
+    footer .footer-links a {
+      color: var(--text-secondary); font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">let's go!</a>
-							</footer>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">YS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cultural">Cultural</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#cv">CV</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-						</div>
-					</section>
+  <!-- HERO -->
+  <section id="hero">
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <h1>YOUKTIK SAJJAN</h1>
+      <div class="subtitle">AI &bull; ML &bull; Systems Thinking &bull; Strategic Automation</div>
+      <p class="tagline">Engineering intelligence. Designing leverage. Building scalable systems.</p>
+      <a href="#projects" class="hero-btn">View Projects</a>
+    </div>
+  </section>
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 data-aos="fade-up">// ABOUT ME</h2>
+    <div class="section-divider" data-aos="fade-up"></div>
+    <div class="about-grid">
+      <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+        <p>
+          Youktik Sajjan is an AI/ML-focused systems thinker passionate about building scalable intelligent architectures. With exposure to analytical trading, automation frameworks, and venture ecosystems, he operates at the intersection of engineering, strategy, and execution.
+        </p>
+        <p>
+          His work centers around building high-leverage systems that compound over time — technically rigorous, strategically aligned, and operationally efficient.
+        </p>
+        <p style="margin-top: 1.5rem;">
+          <strong style="color: var(--text);">Currently:</strong> BS-MS student at IISER Kolkata (Biological Sciences Major, Humanities Minor). Co-founder of iFiNN & UnderWaterAI. Recipient of MeitY Startup Hub Genesis EiR Grant.
+        </p>
+      </div>
+      <div class="philosophy" data-aos="fade-left" data-aos-delay="400">
+        <h3>Build Once. Scale Infinitely.</h3>
+        <p>
+          I believe the future belongs to those who design systems, not tasks. Whether in machine learning pipelines, automation strategies, or financial models, the goal is to reduce friction and amplify signal.
+        </p>
+        <p style="margin-top: 1rem;">Code is not just implementation — it is leverage.</p>
+      </div>
+    </div>
+  </section>
 
-							<header>
-								<h2>Portfolio</h2>
-							</header>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 data-aos="fade-up">// PROJECTS</h2>
+    <div class="section-divider" data-aos="fade-up"></div>
+    <div class="projects-grid">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>AI Trading Signal Engine</h3>
+        <div class="tech">Python &bull; Pandas &bull; ML Models</div>
+        <p>Built a modular trading signal engine using statistical models and ML classification pipelines optimized for high signal precision.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Financial Analytics Automation</h3>
+        <div class="tech">Python &bull; APIs &bull; Data Pipelines</div>
+        <p>Designed automated analytics workflows reducing manual financial reporting overhead by 60%.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>GTM Strategy Intelligence</h3>
+        <div class="tech">Market Research &bull; Data Modeling &bull; Automation</div>
+        <p>Developed a data-driven GTM modeling system integrating TAM/SAM/SOM projections with financial scenario simulation.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>ML Research Experiments</h3>
+        <div class="tech">Scikit-learn &bull; PyTorch</div>
+        <p>Experimental ML models focused on optimization efficiency and performance benchmarking.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+        <h3>iFiNN — Fintech Startup</h3>
+        <div class="tech">Deep Tech &bull; Product Dev &bull; MeitY EiR</div>
+        <p>Co-founded iFiNN, converting initial concept into functional prototype. Awarded MeitY Startup Hub Genesis EiR Cohort 2 Grant.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+        <h3>UnderWaterAI</h3>
+        <div class="tech">AI &bull; Deep Tech &bull; Underwater Systems</div>
+        <p>Leading product development and strategic planning for deep-tech solutions in underwater domains.</p>
+        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+    </div>
+    <p class="section-footer" data-aos="fade-up">More projects available on <a href="https://github.com/ysdvision" target="_blank">GitHub <i class="fab fa-github"></i></a></p>
+  </section>
 
-							<p></p>
+  <!-- CULTURAL -->
+  <section id="cultural">
+    <h2 data-aos="fade-up">// CULTURAL ACTIVITIES</h2>
+    <div class="section-divider" data-aos="fade-up"></div>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Music & Classical Influence</h3>
+          <p>Deep engagement with Indian classical music and raagas. Trained in Indian Classical Singing; self-learning keyboard and guitar. Music is not just art but pattern recognition — structure, discipline, and emotional intelligence.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Campus Tech & Strategy</h3>
+          <p>Active in startup discussions, tech strategy, and analytical systems building within the IISER Kolkata campus ecosystem. Finalist at IIT Delhi Incubator Summit, IIT Madras I-Summit, and Inter IISER E-Summit.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Leadership & Community</h3>
+          <p>Departmental Representative for Biological Sciences at IISER-K. Hospitality Head for Inquivesta XI (2026). Onboarded Krafton and NoScopeGaming as official sponsors. Managing class activities and acting as primary student liaison to faculty.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Social Impact</h3>
+          <p>Student Teacher at Ek Pehal — teaching English and Biology to underprivileged children (classes VI-IX). DKMS BMST Anti-cancer Drive Volunteer — blood stem cell and anti-cancer awareness drives.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Literature & Communication</h3>
+          <p>Enthusiast of Bangla Sahitya. Skilled in Public Speaking and Science Communication. Multilingual: English, Hindi, Bengali, German.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3>Ipsum Feugiat</h3>
-										</header>
-									</article>
-									
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
-									</article>
-									
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<header>
-											<h3>Dolor Penatibus</h3>
-										</header>
-									</article>
-									
-								</div>
-							</div>
+  <!-- MUSIC -->
+  <section id="music">
+    <h2 data-aos="fade-up">// MUSIC</h2>
+    <div class="section-divider" data-aos="fade-up"></div>
+    <div class="music-section" data-aos="fade-up">
+      <h3 style="color: var(--accent); margin-bottom: 1.5rem;">Currently Listening To</h3>
+      <div class="spotify-embed">
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;"></iframe>
+      </div>
 
-						</div>
-					</section>
+      <h3 style="color: var(--accent); margin: 2.5rem 0 1rem;">Top Artists</h3>
+      <div class="albums-grid">
+        <div class="album-card" data-aos="fade-up" data-aos-delay="100">
+          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
+          </div>
+          <div class="album-info"><h4>Artist 1</h4><p>Your top artist</p></div>
+        </div>
+        <div class="album-card" data-aos="fade-up" data-aos-delay="200">
+          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
+          </div>
+          <div class="album-info"><h4>Artist 2</h4><p>Your top artist</p></div>
+        </div>
+        <div class="album-card" data-aos="fade-up" data-aos-delay="300">
+          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
+          </div>
+          <div class="album-info"><h4>Artist 3</h4><p>Your top artist</p></div>
+        </div>
+        <div class="album-card" data-aos="fade-up" data-aos-delay="400">
+          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
+          </div>
+          <div class="album-info"><h4>Artist 4</h4><p>Your top artist</p></div>
+        </div>
+      </div>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
+      <h3 style="color: var(--accent); margin: 2.5rem 0 1rem;">Albums On Repeat</h3>
+      <div class="spotify-embed">
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF?theme=0" width="100%" height="380" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;"></iframe>
+      </div>
 
-							<header>
-								<h2>About Me</h2>
-							</header>
+      <p style="margin-top:2rem; font-size:0.85rem; color: var(--text-secondary);">
+        <i class="fab fa-spotify" style="color:#1DB954;"></i>
+        Connect your Spotify via <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">Spotify Web API</a> for live data.
+        Use <a href="https://developer.spotify.com/documentation/embeds" target="_blank">Spotify Embeds</a> for quick integration.
+      </p>
+    </div>
+  </section>
 
-							<a href="#" class="image featured"><img src= alt="" /></a>
+  <!-- CV -->
+  <section id="cv">
+    <h2 data-aos="fade-up">// CURRICULUM VITAE</h2>
+    <div class="section-divider" data-aos="fade-up"></div>
+    <p data-aos="fade-up" style="margin-bottom: 1rem;">
+      This CV loads directly from the source file — any updates to the CV are reflected here automatically.
+    </p>
+    <div class="cv-frame-wrapper" data-aos="fade-up">
+      <iframe src="cv.html" title="Youktik Sajjan CV"></iframe>
+    </div>
+    <a href="cv.html" target="_blank" class="cv-download" data-aos="fade-up">
+      <i class="fas fa-external-link-alt"></i> Open Full CV
+    </a>
+  </section>
 
-							<p>I'm interested in specific literatures, Indian classical music, fitness, ttrpgs.
-								<br>I read mostly about infectious disease, ecology and chemical str's of various biomolecules. 
-								<br>My hobbies include singing, playing different video games and working out regularly.
-								<br>I was trained in Indian classical music and currently self learning two instruments.</p>	
-						</div>
-					</section>
-					<!-- Biology-->
-			<section id="biology" class="three">
-				<div class="container">
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/ysdvision" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/youktik-sajjan/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p style="margin-top:1rem;">&copy; 2026 Youktik Sajjan</p>
+    <p style="font-size:0.8rem;">Built with intention. Powered by systems thinking.</p>
+  </footer>
 
-					<header>
-						<h2>Biology</h2>
-					</header>
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS scroll animations
+    AOS.init({ once: true, duration: 800, offset: 80 });
 
-					<a href="#" class="image featured"><img src= alt="" /></a>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-					<ul>
-						<li><a href="">Immunology</a></li>
-						<li><a href="rna.html">rna</a></li>
-						<li><a href="valo chele.txt">Immunology</a></li>
-					</ul>
+    // Close menu on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
 
-				</div>
-			</section>
-
-				<!-- NOTES-->	
-				<section id="notes" class="three">
-					<div class="container">
-
-						<header>
-							<h2>Notes</h2>
-						</header>
-
-						<a href="#" class="image featured"><img src= alt="" /></a>
-
-						<p>ami bokachoda</p>
-
-					</div>
-				</section>
-				<!-- Contact -->
-					
-			
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.boxShadow = window.scrollY > 50
+        ? '0 4px 20px rgba(0,0,0,0.4)'
+        : 'none';
+    });
+  </script>
+</body>
 </html>
