@@ -1,73 +1,62 @@
-# Youktik Sajjan — Minimal Craft Portfolio
+# ⬡ Youktik Sajjan — The End Dimension Portfolio
 
 **ysdvision.github.io**
 
-Minimalistic dark portfolio inspired by Minecraft 1.20+ deepslate + emerald aesthetic, blended with futuristic UI minimalism.
+A Minecraft End-dimension themed developer portfolio. Void black backgrounds, chorus plant accents, floating endstone islands, and pixel-perfect block geometry — rendered as a systems architect's mind palace.
 
-## Pages
+## Sections
 
-- **About** — Bio, philosophy, currently-at
-- **Projects** — Card grid with GitHub links
-- **Cultural** — Vertical timeline of activities
-- **Music** — Spotify embeds + album grid
-- **CV** — Live-synced CV via iframe (updates when `cv.html` changes)
-
-## Tech Stack
-
-- HTML + CSS (custom, no framework)
-- Google Fonts: Press Start 2P + Inter
-- Font Awesome 6.5 icons
-- AOS (Animate On Scroll) library
-- Spotify Embed iFrames
+- **About** — Hero, bio, Minecraft-style tooltip panel, philosophy quote
+- **Projects** — 6-card grid with hover glow + left-border reveal
+- **Culture** — Floating island timeline with chorus plant accents
+- **Music** — Jukebox-style panel, disc slots, Spotify embeds
+- **Blog** — Book & quill log entries (placeholder posts)
+- **Ventures** — Dragon Egg section with stage-tagged venture cards
+- **Contact** — End Gateway portal animation + contact form
 
 ## Design System
 
 | Token | Value |
 |---|---|
-| Background | `#0f1115` |
-| Surface | `#1a1d24` |
-| Card | `#222630` |
-| Accent (Emerald) | `#3acb7a` |
-| Glow | `rgba(58,203,122,0.4)` |
-| Text Primary | `#f2f2f2` |
-| Text Secondary | `#a0a7b5` |
+| Void Deepest | `#050508` |
+| Void Base | `#0a0b12` |
+| Void Surface | `#0f1020` |
+| Endstone Bright | `#d4cfa8` |
+| Chorus Bloom | `#c084fc` |
+| Chorus Pale | `#e9d5ff` |
+| Portal Cyan | `#67e8f9` (one CTA only) |
 
-## CV Sync
+## Typography
 
-The portfolio embeds `cv.html` via iframe. To update the CV on the website:
+| Tier | Font | Usage |
+|---|---|---|
+| 1 | Press Start 2P | Hero name, nav logo |
+| 2 | VT323 | Section headers, card titles |
+| 3 | Share Tech Mono | Labels, tags, nav links |
+| 4 | Nunito | Body copy |
 
-1. Edit your CV source file
-2. Export/convert to HTML
-3. Replace `cv.html` in this repository
-4. Push — the site auto-updates
+## Tech Stack
+
+- HTML + Tailwind CDN + Vanilla JS
+- Google Fonts (Press Start 2P, VT323, Share Tech Mono, Nunito)
+- CSS custom properties for full color system
+- IntersectionObserver scroll animations
+- 60 void particles (CSS animation, no canvas)
+- Formspree for contact form
+
+## Design Rules
+
+- **0px border-radius everywhere** — block geometry
+- Chorus purple is the **one accent**; portal cyan for **one CTA only**
+- Every section has a `// code-style` label
+- Mobile-first, works at 375px
+- No heavy libraries — loads fast on GitHub Pages
 
 ## Deployment
 
-1. Create a **public** repository named `ysdvision.github.io`
-2. Copy all files from this `portfolio/` folder to the repo root
-3. Push to `main` branch
-4. GitHub Pages auto-deploys at: https://ysdvision.github.io
-
-```bash
-git init
-git add .
-git commit -m "Initial portfolio deploy"
-git branch -M main
-git remote add origin https://github.com/ysdvision/ysdvision.github.io.git
-git push -u origin main
 ```
-
-## Spotify Integration
-
-Currently using embed iframes. For live data:
-
-1. Register at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Use OAuth 2.0 Authorization Code Flow
-3. Endpoints:
-   - Recently Played: `GET /v1/me/player/recently-played`
-   - Top Artists: `GET /v1/me/top/artists`
-   - Top Tracks: `GET /v1/me/top/tracks`
-
-## License
-
-© 2026 Youktik Sajjan. All rights reserved.
+1. Create repo: ysdvision.github.io
+2. Push index.html to root of main branch
+3. Settings → Pages → Source: main / root
+4. Live at https://ysdvision.github.io
+```

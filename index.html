@@ -3,505 +3,1159 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Youktik Sajjan | AI ML Systems Portfolio</title>
-  <meta name="description" content="AI/ML systems portfolio of Youktik Sajjan showcasing projects, cultural involvement, and music integration."/>
-  <meta name="author" content="Youktik Sajjan"/>
+  <title>Youktik Sajjan | AI · ML · Systems Portfolio</title>
+  <meta name="description" content="Portfolio of Youktik Sajjan — AI/ML systems architect, builder of scalable intelligent systems, and end-game strategic thinker."/>
+  <meta property="og:title" content="Youktik Sajjan | ysdvision"/>
+  <meta property="og:description" content="AI · ML · Systems Architecture · Ventures · Built from the void."/>
+  <meta property="og:image" content="https://ysdvision.github.io/og.png"/>
+  <meta name="theme-color" content="#c084fc"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Share+Tech+Mono&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void:     { deepest: '#050508', base: '#0a0b12', surface: '#0f1020', raised: '#161830' },
+            chorus:   { bloom: '#c084fc', stem: '#7c3aed', pale: '#e9d5ff', dim: '#4c1d95' },
+            endstone: { bright: '#d4cfa8', mid: '#9b9478', dark: '#4a4535' },
+            portal:   { cyan: '#67e8f9' },
+            obsidian: '#1a1625',
+          },
+          fontFamily: {
+            pixel:  ['"Press Start 2P"'],
+            vt:     ['VT323'],
+            mono:   ['"Share Tech Mono"'],
+            body:   ['Nunito'],
+          },
+          borderRadius: { DEFAULT: '0px' },
+        }
+      }
+    }
+  </script>
   <style>
-    /* ========== RESET & BASE ========== */
+    /* ═══════════════════════════════════════════
+       THE END DIMENSION — DESIGN SYSTEM
+       ═══════════════════════════════════════════ */
+
+    :root {
+      --void-deepest:     #050508;
+      --void-base:        #0a0b12;
+      --void-surface:     #0f1020;
+      --void-raised:      #161830;
+
+      --endstone-bright:  #d4cfa8;
+      --endstone-mid:     #9b9478;
+      --endstone-dark:    #4a4535;
+
+      --chorus-bloom:     #c084fc;
+      --chorus-stem:      #7c3aed;
+      --chorus-pale:      #e9d5ff;
+      --chorus-dim:       #4c1d95;
+      --chorus-glow:      rgba(192, 132, 252, 0.15);
+      --chorus-glow-hot:  rgba(192, 132, 252, 0.35);
+
+      --portal-cyan:      #67e8f9;
+      --portal-glow:      rgba(103, 232, 249, 0.2);
+
+      --dragon-breath:    #a855f7;
+      --obsidian:         #1a1625;
+    }
+
+    /* ═══════ RESET ═══════ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      background: #0f1115;
-      color: #f2f2f2;
-      font-family: 'Inter', sans-serif;
+      background: var(--void-base);
+      color: var(--endstone-bright);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 400;
       line-height: 1.7;
       overflow-x: hidden;
     }
-    ::selection { background: rgba(58,203,122,0.3); color: #fff; }
+    ::selection { background: rgba(192, 132, 252, 0.3); color: #fff; }
 
-    /* ========== COLOR VARIABLES ========== */
-    :root {
-      --bg: #0f1115;
-      --surface: #1a1d24;
-      --card: #222630;
-      --accent: #3acb7a;
-      --glow: rgba(58,203,122,0.4);
-      --text: #f2f2f2;
-      --text-secondary: #a0a7b5;
+    a { color: var(--chorus-bloom); text-decoration: none; transition: color 0.25s, text-shadow 0.25s; }
+    a:hover { color: var(--chorus-pale); text-shadow: 0 0 8px var(--chorus-glow-hot); }
+
+    /* ═══════ SECTION LABEL ═══════ */
+    .section-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--chorus-bloom);
+      margin-bottom: 2rem;
     }
 
-    /* ========== TYPOGRAPHY ========== */
-    h1, h2, h3, h4 { font-family: 'Press Start 2P', monospace; }
-    h1 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.6; }
-    h2 { font-size: clamp(0.85rem, 2vw, 1.2rem); line-height: 1.6; margin-bottom: 1.5rem; color: var(--accent); }
-    h3 { font-size: clamp(0.65rem, 1.2vw, 0.8rem); line-height: 1.8; }
-    p { color: var(--text-secondary); font-size: 1rem; }
-    a { color: var(--accent); text-decoration: none; transition: all 0.3s; }
-    a:hover { color: #fff; }
+    /* ═══════ ENDSTONE PANEL ═══════ */
+    .endstone-panel {
+      background-color: var(--void-surface);
+      background-image:
+        radial-gradient(ellipse at 20% 30%, rgba(192,132,252,0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(192,132,252,0.02) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.008) 0px, transparent 1px, transparent 6px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.008) 0px, transparent 1px, transparent 6px);
+      border: 1px solid var(--endstone-dark);
+      box-shadow:
+        inset 0 1px 0 rgba(192,132,252,0.06),
+        0 8px 32px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(192,132,252,0.04);
+    }
 
-    /* ========== NAVIGATION ========== */
+    /* ═══════ OBSIDIAN DIVIDER ═══════ */
+    .obsidian-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--chorus-stem) 20%, var(--chorus-bloom) 50%, var(--chorus-stem) 80%, transparent 100%);
+      box-shadow: 0 0 12px var(--chorus-glow);
+      margin: 0 auto;
+    }
+
+    /* ═══════ FLOATING ISLAND ═══════ */
+    .floating-island {
+      position: relative;
+      border-radius: 0 !important;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+    }
+
+    /* ═══════ CHORUS ACCENT ═══════ */
+    .chorus-accent {
+      position: absolute;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--chorus-stem), var(--chorus-bloom), var(--chorus-stem), transparent);
+      box-shadow: 0 0 8px var(--chorus-glow);
+      animation: chorusPulse 3s ease-in-out infinite;
+    }
+
+    /* ═══════ ANIMATIONS ═══════ */
+    @keyframes chorusPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes dragonFlight {
+      0%   { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      33%  { transform: translate(100px, -50px) scale(1.15); opacity: 0.45; }
+      66%  { transform: translate(-60px, 30px) scale(0.95); opacity: 0.35; }
+      100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    }
+    @keyframes portalPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--chorus-glow-hot), inset 0 0 20px var(--chorus-glow); }
+      50%      { box-shadow: 0 0 40px var(--chorus-glow-hot), inset 0 0 40px var(--chorus-glow); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes discSpin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes portalRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      10%  { opacity: var(--p-opacity); }
+      90%  { opacity: var(--p-opacity); }
+      100% { transform: translateY(calc(-100vh - 20px)) translateX(var(--p-drift)); opacity: 0; }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════ VOID PARTICLES ═══════ */
+    #void-particles {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none; overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      animation: floatUp linear infinite;
+    }
+
+    /* ═══════ NAVIGATION ═══════ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(15,17,21,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(58,203,122,0.1);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background: rgba(5, 5, 8, 0.9);
+      border-bottom: 1px solid rgba(192,132,252,0.15);
       padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
+      height: 56px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
     }
     .nav-logo {
       font-family: 'Press Start 2P', monospace;
-      font-size: 0.7rem; color: var(--accent);
-      letter-spacing: 1px;
+      font-size: 12px; color: var(--chorus-bloom); letter-spacing: 1px;
     }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
     .nav-links a {
-      color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;
-      position: relative; padding: 4px 0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px; text-transform: uppercase;
+      color: var(--endstone-mid);
+      padding: 1rem; position: relative;
+      transition: color 0.25s, text-shadow 0.25s;
+      border-bottom: 2px solid transparent;
     }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
-      background: var(--accent); transition: width 0.3s;
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--chorus-bloom);
+      text-shadow: 0 0 8px var(--chorus-glow);
+      border-bottom-color: var(--chorus-bloom);
     }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--chorus-pale); }
+
     .hamburger {
-      display: none; cursor: pointer; flex-direction: column; gap: 5px;
-      background: none; border: none; padding: 4px;
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 8px;
     }
     .hamburger span {
-      width: 24px; height: 2px; background: var(--text); transition: 0.3s;
-      display: block;
+      display: block; width: 24px; height: 2px;
+      background: var(--chorus-bloom); transition: all 0.3s;
+    }
+    .mobile-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: var(--void-deepest);
+      flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    }
+    .mobile-overlay.open { display: flex; }
+    .mobile-overlay a {
+      font-family: 'VT323', monospace; font-size: 36px;
+      color: var(--endstone-bright);
+      opacity: 0; animation: fadeInUp 0.5s ease forwards;
+    }
+    .mobile-overlay a:nth-child(2) { animation-delay: 0.05s; }
+    .mobile-overlay a:nth-child(3) { animation-delay: 0.10s; }
+    .mobile-overlay a:nth-child(4) { animation-delay: 0.15s; }
+    .mobile-overlay a:nth-child(5) { animation-delay: 0.20s; }
+    .mobile-overlay a:nth-child(6) { animation-delay: 0.25s; }
+    .mobile-overlay a:nth-child(7) { animation-delay: 0.30s; }
+    .mobile-overlay a:nth-child(8) { animation-delay: 0.35s; }
+    .mobile-close {
+      position: absolute; top: 1rem; right: 1.5rem;
+      font-family: 'VT323', monospace; font-size: 36px;
+      color: var(--chorus-bloom); background: none; border: none; cursor: pointer;
     }
 
     @media (max-width: 768px) {
+      .nav-links { display: none; }
       .hamburger { display: flex; }
-      .nav-links {
-        display: none; flex-direction: column; position: absolute;
-        top: 60px; left: 0; right: 0; background: rgba(15,17,21,0.98);
-        padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid rgba(58,203,122,0.1);
-      }
-      .nav-links.open { display: flex; }
     }
 
-    /* ========== SECTIONS ========== */
-    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .section-divider {
-      width: 60px; height: 3px; background: var(--accent); margin: 0 auto 3rem;
-      box-shadow: 0 0 12px var(--glow);
-    }
-
-    /* ========== HERO ========== */
+    /* ═══════ HERO ═══════ */
     #hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center;
-      padding-top: 80px;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--void-deepest);
+      position: relative; overflow: hidden; padding-top: 56px;
     }
-    #hero h1 { margin-bottom: 1rem; letter-spacing: 4px; }
-    #hero .subtitle {
+    .hero-blob {
+      position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, rgba(192,132,252,0.04) 40%, transparent 70%);
+      animation: dragonFlight 25s ease-in-out infinite;
+      top: 15%; left: 25%; pointer-events: none;
+    }
+    .hero-blob-2 {
+      position: absolute;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(103,232,249,0.05) 0%, transparent 60%);
+      animation: dragonFlight 30s ease-in-out infinite reverse;
+      bottom: 10%; right: 15%; pointer-events: none;
+    }
+    .hero-content { text-align: center; position: relative; z-index: 2; }
+    .hero-content .endstone-panel { padding: 3rem 3.5rem; display: inline-block; }
+    .hero-name {
       font-family: 'Press Start 2P', monospace;
-      font-size: clamp(0.5rem, 1vw, 0.7rem);
-      color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 2px;
+      font-size: clamp(14px, 2.5vw, 20px);
+      color: var(--endstone-bright); margin-bottom: 1.2rem; letter-spacing: 2px;
     }
-    #hero .tagline {
-      font-size: 1.1rem; color: var(--text-secondary);
-      max-width: 600px; margin-bottom: 2.5rem;
+    .hero-title {
+      font-family: 'VT323', monospace;
+      font-size: clamp(28px, 5vw, 36px);
+      color: var(--chorus-bloom); margin-bottom: 1rem;
     }
-    .hero-btn {
-      display: inline-block; padding: 12px 32px;
-      border: 2px solid var(--accent); color: var(--accent);
-      font-family: 'Press Start 2P', monospace; font-size: 0.6rem;
-      letter-spacing: 1px; border-radius: 4px;
-      transition: all 0.3s; background: transparent;
-      cursor: pointer;
+    .hero-sub {
+      font-family: 'Nunito', sans-serif; font-weight: 300;
+      font-size: 18px; color: var(--endstone-mid); margin-bottom: 2rem;
     }
-    .hero-btn:hover {
-      background: var(--accent); color: var(--bg);
-      box-shadow: 0 0 20px var(--glow);
+    .hero-typewriter {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 14px; color: var(--chorus-pale);
+      margin-bottom: 2.5rem; min-height: 1.5em;
+    }
+    .hero-typewriter .cursor {
+      color: var(--chorus-bloom);
+      animation: blink 0.8s step-end infinite;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary, .btn-secondary {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 13px; padding: 0.75rem 1.5rem;
+      border-radius: 0 !important; cursor: pointer;
+      transition: all 0.25s; text-transform: uppercase;
+    }
+    .btn-primary {
+      background: transparent; color: var(--chorus-bloom);
+      border: 1px solid var(--chorus-bloom);
+      box-shadow: 0 0 12px var(--chorus-glow);
+      animation: chorusPulse 2.5s ease-in-out infinite;
+    }
+    .btn-primary:hover {
+      background: rgba(192,132,252,0.1);
+      box-shadow: 0 0 24px var(--chorus-glow-hot);
+      color: var(--chorus-pale);
+    }
+    .btn-secondary {
+      background: transparent; color: var(--endstone-mid);
+      border: 1px solid var(--endstone-dark);
+    }
+    .btn-secondary:hover {
+      border-color: var(--endstone-mid); color: var(--endstone-bright);
     }
 
-    /* ========== ABOUT ========== */
-    #about .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-      align-items: start;
+    /* ═══════ ABOUT ═══════ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-prose p {
+      font-size: 16px; color: rgba(212,207,168,0.85);
+      margin-bottom: 1.2rem; line-height: 1.8;
     }
-    #about .about-text p { margin-bottom: 1rem; }
-    #about .philosophy {
-      background: var(--surface); padding: 2rem; border-radius: 8px;
-      border-left: 3px solid var(--accent);
-      box-shadow: 4px 4px 0 rgba(58,203,122,0.08);
+    .tooltip-panel {
+      font-family: 'Share Tech Mono', monospace; font-size: 13px;
+      border: 2px solid var(--chorus-bloom);
+      background: var(--void-deepest); padding: 1.5rem;
+      color: var(--endstone-bright); line-height: 1.9;
+      box-shadow: 0 0 20px var(--chorus-glow);
     }
-    #about .philosophy h3 { color: var(--accent); margin-bottom: 1rem; }
+    .tooltip-panel .tp-header { font-size: 15px; color: var(--chorus-pale); margin-bottom: 0.3rem; }
+    .tooltip-panel .tp-meta { color: var(--endstone-mid); margin-bottom: 0.8rem; }
+    .tooltip-panel .tp-divider { border: none; border-top: 1px solid var(--chorus-dim); margin: 0.8rem 0; }
+    .tooltip-panel .tp-skill { color: var(--endstone-bright); }
+    .tooltip-panel .tp-skill::before { content: '◈ '; color: var(--chorus-bloom); }
+    .level-bar-track { background: var(--endstone-dark); height: 10px; margin-top: 0.8rem; overflow: hidden; }
+    .level-bar-fill {
+      height: 100%; width: 0;
+      background: var(--chorus-bloom);
+      box-shadow: 0 0 10px var(--chorus-glow-hot);
+      transition: width 1.5s ease;
+    }
+    .level-bar-fill.animate { width: 70%; }
+
     @media (max-width: 768px) {
-      #about .about-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
     }
 
-    /* ========== PROJECTS ========== */
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+    /* ═══════ PHILOSOPHY ═══════ */
+    .philosophy-panel {
+      background: var(--obsidian); padding: 3rem; margin-top: 4rem; position: relative;
     }
+    .philosophy-panel .chorus-accent { left: 0; top: 1rem; bottom: 1rem; height: auto; }
+    .philosophy-panel blockquote {
+      font-family: 'VT323', monospace;
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--chorus-pale); padding-left: 2rem;
+      margin-bottom: 1.5rem; line-height: 1.4;
+    }
+    .philosophy-panel p {
+      font-size: 16px; color: rgba(212,207,168,0.85);
+      padding-left: 2rem; line-height: 1.8;
+    }
+
+    /* ═══════ PROJECTS ═══════ */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .project-card {
-      background: var(--card); border-radius: 8px; padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.04);
-      box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .project-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: var(--accent); transform: scaleX(0);
-      transition: transform 0.3s; transform-origin: left;
+      padding: 2rem; border-left: 3px solid transparent;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
     }
     .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(58,203,122,0.12);
+      transform: translateY(-6px);
+      border-left-color: var(--chorus-bloom);
+      box-shadow: inset 0 1px 0 rgba(192,132,252,0.1), 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(192,132,252,0.1);
     }
-    .project-card:hover::before { transform: scaleX(1); }
-    .project-card h3 { color: var(--text); margin-bottom: 0.5rem; font-size: 0.7rem; }
-    .project-card .tech {
-      font-size: 0.8rem; color: var(--accent); margin-bottom: 0.75rem;
-      font-weight: 500;
+    .project-card .card-title {
+      font-family: 'VT323', monospace; font-size: 24px;
+      color: var(--endstone-bright); margin-bottom: 0.8rem;
     }
-    .project-card p { font-size: 0.9rem; margin-bottom: 1rem; }
-    .project-card .card-link {
-      font-size: 0.85rem; color: var(--accent); display: inline-flex;
-      align-items: center; gap: 6px;
+    .project-card .card-title::before { content: '⬡ '; color: var(--chorus-bloom); }
+    .project-card .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .tag {
+      font-family: 'Share Tech Mono', monospace; font-size: 11px;
+      background: var(--chorus-dim); color: var(--chorus-pale);
+      padding: 0.2rem 0.6rem; border-radius: 0 !important;
     }
-    .project-card .card-link:hover { color: #fff; }
-    .section-footer { text-align: center; margin-top: 2rem; color: var(--text-secondary); }
+    .project-card .card-desc {
+      font-size: 15px; color: rgba(212,207,168,0.85);
+      margin-bottom: 1rem; line-height: 1.7;
+    }
+    .project-card .card-link { font-family: 'Share Tech Mono', monospace; font-size: 13px; }
+    .section-footer {
+      font-family: 'Share Tech Mono', monospace; font-size: 13px;
+      color: var(--endstone-mid); text-align: center; margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
 
-    /* ========== CULTURAL / TIMELINE ========== */
-    .timeline { position: relative; padding: 2rem 0; }
-    .timeline::before {
-      content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
-      width: 2px; background: var(--accent);
-      box-shadow: 0 0 12px var(--glow); transform: translateX(-50%);
+    /* ═══════ CULTURE — FLOATING ISLANDS ═══════ */
+    .islands-timeline {
+      display: flex; flex-direction: column; gap: 3rem;
+      max-width: 720px; margin: 0 auto;
     }
-    .timeline-item {
-      display: flex; width: 100%; margin-bottom: 3rem;
-      position: relative;
+    .island-entry { padding: 2rem 2rem 2rem 2.5rem; position: relative; }
+    .island-entry .chorus-accent { left: 0; top: 2rem; height: 60px; }
+    .island-entry .biome-tag {
+      font-family: 'Share Tech Mono', monospace; font-size: 11px;
+      color: var(--chorus-bloom); margin-bottom: 0.8rem; display: inline-block;
+      border: 1px solid var(--chorus-dim); padding: 0.15rem 0.5rem;
     }
-    .timeline-item:nth-child(odd) { justify-content: flex-start; padding-right: calc(50% + 2rem); }
-    .timeline-item:nth-child(even) { justify-content: flex-end; padding-left: calc(50% + 2rem); }
-    .timeline-dot {
-      position: absolute; left: 50%; top: 24px; width: 14px; height: 14px;
-      background: var(--accent); border-radius: 50%; transform: translateX(-50%);
-      box-shadow: 0 0 12px var(--glow); z-index: 1;
+    .island-entry h3 {
+      font-family: 'VT323', monospace; font-size: 28px;
+      color: var(--endstone-bright); margin-bottom: 0.8rem;
     }
-    .timeline-content {
-      background: var(--card); padding: 1.5rem 2rem; border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.04);
-      box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+    .island-entry p {
+      font-size: 15px; color: rgba(212,207,168,0.85); line-height: 1.8;
     }
-    .timeline-content h3 { color: var(--accent); margin-bottom: 0.75rem; }
+
+    /* ═══════ MUSIC — JUKEBOX ═══════ */
+    .music-panel { max-width: 800px; margin: 0 auto; }
+    .now-playing { display: flex; align-items: center; gap: 1.5rem; padding: 2rem; margin-bottom: 2rem; }
+    .album-art {
+      width: 80px; height: 80px; background: var(--void-raised);
+      border: 2px solid var(--endstone-dark); image-rendering: pixelated;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; flex-shrink: 0;
+    }
+    .track-info { flex: 1; }
+    .track-info .track-name { font-family: 'VT323', monospace; font-size: 28px; color: var(--endstone-bright); }
+    .track-info .track-artist {
+      font-family: 'Share Tech Mono', monospace; font-size: 13px;
+      color: var(--endstone-mid); margin-bottom: 0.8rem;
+    }
+    .progress-track { background: var(--endstone-dark); height: 6px; width: 100%; }
+    .progress-fill { height: 100%; width: 65%; background: var(--chorus-bloom); box-shadow: 0 0 8px var(--chorus-glow-hot); }
+    .disc-grid {
+      display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0; margin-bottom: 2rem;
+    }
+    .disc-slot {
+      width: 72px; height: 72px; border: 2px solid var(--endstone-dark);
+      image-rendering: pixelated; transition: all 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Share Tech Mono', monospace; font-size: 10px;
+      color: var(--endstone-mid); text-align: center; flex-shrink: 0;
+      background: var(--void-surface);
+    }
+    .disc-slot:hover {
+      border-color: var(--chorus-bloom);
+      box-shadow: 0 0 20px var(--chorus-glow-hot);
+      animation: discSpin 2s linear infinite;
+      color: var(--chorus-pale);
+    }
+    .spotify-embeds { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .spotify-embeds iframe { width: 100%; border: none; border-radius: 0 !important; }
     @media (max-width: 768px) {
-      .timeline::before { left: 20px; }
-      .timeline-item { padding-right: 0 !important; padding-left: 3rem !important; justify-content: flex-start !important; }
-      .timeline-dot { left: 20px; }
+      .spotify-embeds { grid-template-columns: 1fr; }
+      .now-playing { flex-direction: column; text-align: center; }
     }
 
-    /* ========== MUSIC ========== */
-    .music-section { background: var(--surface); border-radius: 12px; padding: 3rem; margin-top: 2rem; }
-    .albums-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1.5rem; margin-top: 1.5rem;
+    /* ═══════ BLOG ═══════ */
+    .blog-list {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1.5rem;
     }
-    .album-card {
-      background: var(--card); border-radius: 8px; overflow: hidden;
-      transition: transform 0.3s; cursor: pointer;
-      box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+    .blog-card { padding: 2rem; }
+    .blog-card .blog-date {
+      font-family: 'Share Tech Mono', monospace; font-size: 12px;
+      color: var(--endstone-mid); margin-bottom: 0.5rem;
     }
-    .album-card:hover { transform: perspective(600px) rotateY(-5deg) rotateX(3deg) scale(1.02); }
-    .album-card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
-    .album-card .album-info { padding: 0.75rem; }
-    .album-card .album-info h4 { font-size: 0.5rem; color: var(--text); font-family: 'Press Start 2P', monospace; }
-    .album-card .album-info p { font-size: 0.8rem; margin-top: 4px; }
-    .spotify-embed { margin-top: 2rem; border-radius: 12px; overflow: hidden; }
-    .spotify-embed iframe { border-radius: 12px; }
+    .blog-card .blog-title {
+      font-family: 'VT323', monospace; font-size: 32px;
+      color: var(--endstone-bright); margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .blog-card .blog-excerpt {
+      font-size: 15px; color: var(--endstone-mid);
+      margin-bottom: 1rem; line-height: 1.7;
+    }
+    .blog-card .blog-footer {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .blog-card .blog-read { font-family: 'Share Tech Mono', monospace; font-size: 13px; }
 
-    /* ========== CV SECTION ========== */
-    #cv { text-align: center; }
-    #cv .cv-frame-wrapper {
-      background: var(--surface); border-radius: 12px; overflow: hidden;
-      margin-top: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    /* ═══════ VENTURES ═══════ */
+    .venture-philosophy {
+      background: var(--obsidian); padding: 3rem;
+      text-align: center; margin-bottom: 3rem;
     }
-    #cv iframe { width: 100%; height: 85vh; border: none; }
-    .cv-download {
-      display: inline-block; margin-top: 1.5rem;
-      padding: 10px 28px; border: 2px solid var(--accent);
-      color: var(--accent); font-family: 'Press Start 2P', monospace;
-      font-size: 0.55rem; border-radius: 4px; transition: all 0.3s;
+    .venture-philosophy h2 {
+      font-family: 'VT323', monospace;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--chorus-pale); margin-bottom: 1.5rem;
     }
-    .cv-download:hover {
-      background: var(--accent); color: var(--bg);
-      box-shadow: 0 0 16px var(--glow);
+    .venture-philosophy p {
+      font-size: 16px; color: rgba(212,207,168,0.85);
+      max-width: 700px; margin: 0 auto; line-height: 1.8;
+    }
+    .ventures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .venture-card { padding: 2rem; }
+    .venture-card .venture-name {
+      font-family: 'VT323', monospace; font-size: 24px;
+      color: var(--chorus-bloom); margin-bottom: 0.5rem;
+    }
+    .venture-card .venture-name::before { content: '◈ '; }
+    .venture-card .stage-tag {
+      font-family: 'Share Tech Mono', monospace; font-size: 11px;
+      padding: 0.15rem 0.5rem; display: inline-block; margin-bottom: 1rem;
+    }
+    .stage-ideation { background: var(--endstone-dark); color: var(--endstone-mid); }
+    .stage-building {
+      background: var(--chorus-dim); color: var(--chorus-bloom);
+      animation: chorusPulse 2.5s ease-in-out infinite;
+    }
+    .stage-live {
+      background: rgba(103,232,249,0.15); color: var(--portal-cyan);
+      box-shadow: 0 0 12px var(--portal-glow);
+    }
+    .venture-card p {
+      font-size: 15px; color: rgba(212,207,168,0.85);
+      margin-bottom: 1rem; line-height: 1.7;
+    }
+    .venture-card .domain-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .venture-quote {
+      font-family: 'VT323', monospace; font-size: 22px;
+      color: var(--chorus-pale); text-align: center; margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .ventures-grid { grid-template-columns: 1fr; } }
+
+    /* ═══════ CONTACT ═══════ */
+    .contact-wrap { max-width: 600px; margin: 0 auto; text-align: center; }
+    .portal-frame {
+      width: 120px; height: 120px;
+      border: 3px solid var(--chorus-bloom);
+      margin: 0 auto 2rem;
+      animation: portalPulse 2s ease-in-out infinite;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .portal-frame-inner {
+      width: 50px; height: 50px;
+      border: 2px solid var(--chorus-stem);
+      animation: portalRotate 8s linear infinite;
+    }
+    .contact-heading {
+      font-family: 'VT323', monospace; font-size: 40px;
+      color: var(--chorus-pale); margin-bottom: 0.8rem;
+    }
+    .contact-sub { font-size: 16px; color: var(--endstone-mid); margin-bottom: 2.5rem; }
+    .contact-methods { text-align: left; margin-bottom: 3rem; }
+    .contact-row {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.8rem 0; border-bottom: 1px solid rgba(74,69,53,0.3);
+      transition: color 0.25s;
+    }
+    .contact-row:hover { color: var(--chorus-bloom); }
+    .contact-row .cr-label {
+      font-family: 'Share Tech Mono', monospace; font-size: 13px;
+      color: var(--chorus-bloom); min-width: 100px;
+    }
+    .contact-row .cr-label::before { content: '◈ '; }
+    .contact-row .cr-sep { color: var(--endstone-dark); font-family: 'Share Tech Mono', monospace; }
+    .contact-row .cr-value { font-size: 15px; color: var(--endstone-bright); }
+    .contact-form { text-align: left; }
+    .contact-form label {
+      font-family: 'Share Tech Mono', monospace; font-size: 12px;
+      color: var(--endstone-mid); display: block; margin-bottom: 0.3rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: var(--void-surface);
+      border: 1px solid var(--endstone-dark); border-radius: 0 !important;
+      color: var(--endstone-bright);
+      font-family: 'Share Tech Mono', monospace; font-size: 14px;
+      padding: 0.7rem 0.8rem; margin-bottom: 1rem;
+      transition: border-color 0.25s, box-shadow 0.25s; outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--chorus-bloom);
+      box-shadow: 0 0 12px var(--chorus-glow);
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .btn-submit {
+      font-family: 'Share Tech Mono', monospace; font-size: 14px;
+      padding: 0.8rem 2rem; background: transparent;
+      color: var(--chorus-pale); border: 1px solid var(--chorus-bloom);
+      border-radius: 0 !important; cursor: pointer;
+      transition: all 0.25s; text-transform: uppercase;
+    }
+    .btn-submit:hover {
+      background: rgba(192,132,252,0.1);
+      box-shadow: 0 0 24px var(--chorus-glow-hot);
     }
 
-    /* ========== FOOTER ========== */
+    /* ═══════ FOOTER ═══════ */
     footer {
-      text-align: center; padding: 3rem 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      background: var(--obsidian);
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, transparent, var(--chorus-bloom), transparent) 1;
+      padding: 3rem 1.5rem; text-align: center;
+      position: relative; z-index: 1;
     }
-    footer p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
-    footer .footer-links { display: flex; justify-content: center; gap: 1.5rem; }
-    footer .footer-links a {
-      color: var(--text-secondary); font-size: 1.2rem;
-      transition: color 0.3s;
+    .footer-logo {
+      font-family: 'Press Start 2P', monospace; font-size: 12px;
+      color: var(--chorus-bloom); margin-bottom: 0.5rem;
     }
-    footer .footer-links a:hover { color: var(--accent); }
+    .footer-copy {
+      font-family: 'Share Tech Mono', monospace; font-size: 12px;
+      color: var(--endstone-mid); margin-bottom: 0.3rem;
+    }
+    .footer-tagline {
+      font-family: 'Share Tech Mono', monospace; font-size: 12px;
+      color: var(--endstone-dark); margin-bottom: 1.5rem;
+    }
+    .footer-socials {
+      display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem;
+    }
+    .footer-socials a {
+      font-family: 'Share Tech Mono', monospace; font-size: 12px;
+      color: var(--endstone-mid); transition: color 0.25s, text-shadow 0.25s;
+    }
+    .footer-socials a:hover {
+      color: var(--chorus-bloom); text-shadow: 0 0 8px var(--chorus-glow);
+    }
+    .footer-url {
+      font-family: 'Share Tech Mono', monospace; font-size: 11px;
+      color: var(--endstone-dark);
+    }
+
+    /* ═══════ SECTIONS ═══════ */
+    section { position: relative; z-index: 1; padding: 6rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- ═══════ VOID PARTICLES ═══════ -->
+  <div id="void-particles"></div>
+
+  <!-- ═══════ NAVIGATION ═══════ -->
   <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">YS</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#cultural">Cultural</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#cv">CV</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <a href="#hero" class="nav-logo">⬡ YSD</a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#culture">culture</a></li>
+      <li><a href="#music">music</a></li>
+      <li><a href="#blog">blog</a></li>
+      <li><a href="#ventures">ventures</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- ═══════ MOBILE OVERLAY ═══════ -->
+  <div class="mobile-overlay" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMobile()">✕</button>
+    <a href="#about" onclick="toggleMobile()">ABOUT</a>
+    <a href="#projects" onclick="toggleMobile()">PROJECTS</a>
+    <a href="#culture" onclick="toggleMobile()">CULTURE</a>
+    <a href="#music" onclick="toggleMobile()">MUSIC</a>
+    <a href="#blog" onclick="toggleMobile()">BLOG</a>
+    <a href="#ventures" onclick="toggleMobile()">VENTURES</a>
+    <a href="#contact" onclick="toggleMobile()">CONTACT</a>
+  </div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--            PAGE 1 — ABOUT ME            -->
+  <!-- ════════════════════════════════════════ -->
 
   <!-- HERO -->
   <section id="hero">
-    <div data-aos="fade-up" data-aos-duration="1000">
-      <h1>YOUKTIK SAJJAN</h1>
-      <div class="subtitle">AI &bull; ML &bull; Systems Thinking &bull; Strategic Automation</div>
-      <p class="tagline">Engineering intelligence. Designing leverage. Building scalable systems.</p>
-      <a href="#projects" class="hero-btn">View Projects</a>
+    <div class="hero-blob"></div>
+    <div class="hero-blob-2"></div>
+    <div class="hero-content">
+      <div class="endstone-panel floating-island">
+        <div class="hero-name">YOUKTIK SAJJAN</div>
+        <div class="hero-title">AI Architect · Systems Builder · End-Game Thinker</div>
+        <div class="hero-sub">Engineering intelligence from the void outward.</div>
+        <div class="hero-typewriter" id="typewriter"></div>
+        <div class="hero-buttons">
+          <a href="#about" class="btn-primary">ENTER THE VOID →</a>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="btn-secondary">github.com/ysdvision ↗</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <h2 data-aos="fade-up">// ABOUT ME</h2>
-    <div class="section-divider" data-aos="fade-up"></div>
-    <div class="about-grid">
-      <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-        <p>
-          Youktik Sajjan is an AI/ML-focused systems thinker passionate about building scalable intelligent architectures. With exposure to analytical trading, automation frameworks, and venture ecosystems, he operates at the intersection of engineering, strategy, and execution.
-        </p>
-        <p>
-          His work centers around building high-leverage systems that compound over time — technically rigorous, strategically aligned, and operationally efficient.
-        </p>
-        <p style="margin-top: 1.5rem;">
-          <strong style="color: var(--text);">Currently:</strong> BS-MS student at IISER Kolkata (Biological Sciences Major, Humanities Minor). Co-founder of iFiNN & UnderWaterAI. Recipient of MeitY Startup Hub Genesis EiR Grant.
-        </p>
-      </div>
-      <div class="philosophy" data-aos="fade-left" data-aos-delay="400">
-        <h3>Build Once. Scale Infinitely.</h3>
-        <p>
-          I believe the future belongs to those who design systems, not tasks. Whether in machine learning pipelines, automation strategies, or financial models, the goal is to reduce friction and amplify signal.
-        </p>
-        <p style="margin-top: 1rem;">Code is not just implementation — it is leverage.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2 data-aos="fade-up">// PROJECTS</h2>
-    <div class="section-divider" data-aos="fade-up"></div>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>AI Trading Signal Engine</h3>
-        <div class="tech">Python &bull; Pandas &bull; ML Models</div>
-        <p>Built a modular trading signal engine using statistical models and ML classification pipelines optimized for high signal precision.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Financial Analytics Automation</h3>
-        <div class="tech">Python &bull; APIs &bull; Data Pipelines</div>
-        <p>Designed automated analytics workflows reducing manual financial reporting overhead by 60%.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>GTM Strategy Intelligence</h3>
-        <div class="tech">Market Research &bull; Data Modeling &bull; Automation</div>
-        <p>Developed a data-driven GTM modeling system integrating TAM/SAM/SOM projections with financial scenario simulation.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-        <h3>ML Research Experiments</h3>
-        <div class="tech">Scikit-learn &bull; PyTorch</div>
-        <p>Experimental ML models focused on optimization efficiency and performance benchmarking.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-        <h3>iFiNN — Fintech Startup</h3>
-        <div class="tech">Deep Tech &bull; Product Dev &bull; MeitY EiR</div>
-        <p>Co-founded iFiNN, converting initial concept into functional prototype. Awarded MeitY Startup Hub Genesis EiR Cohort 2 Grant.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="600">
-        <h3>UnderWaterAI</h3>
-        <div class="tech">AI &bull; Deep Tech &bull; Underwater Systems</div>
-        <p>Leading product development and strategic planning for deep-tech solutions in underwater domains.</p>
-        <a href="https://github.com/ysdvision" target="_blank" class="card-link"><i class="fab fa-github"></i> View on GitHub</a>
-      </div>
-    </div>
-    <p class="section-footer" data-aos="fade-up">More projects available on <a href="https://github.com/ysdvision" target="_blank">GitHub <i class="fab fa-github"></i></a></p>
-  </section>
-
-  <!-- CULTURAL -->
-  <section id="cultural">
-    <h2 data-aos="fade-up">// CULTURAL ACTIVITIES</h2>
-    <div class="section-divider" data-aos="fade-up"></div>
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Music & Classical Influence</h3>
-          <p>Deep engagement with Indian classical music and raagas. Trained in Indian Classical Singing; self-learning keyboard and guitar. Music is not just art but pattern recognition — structure, discipline, and emotional intelligence.</p>
+  <section id="about" style="background: var(--void-base);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// ENTITY: youktik_sajjan.json</div>
+      <div class="about-grid">
+        <div class="about-prose animate-on-scroll">
+          <p>Youktik Sajjan is an AI/ML-focused systems architect building intelligent, scalable infrastructure at the intersection of engineering, strategy, and execution. With roots in analytical trading, automation design, and venture ecosystems, his work compounds leverage over time — technically rigorous, strategically deliberate, operationally efficient.</p>
+          <p>He builds systems, not features. Architectures, not patches. End-game thinking applied to every layer of the stack.</p>
         </div>
-      </div>
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Campus Tech & Strategy</h3>
-          <p>Active in startup discussions, tech strategy, and analytical systems building within the IISER Kolkata campus ecosystem. Finalist at IIT Delhi Incubator Summit, IIT Madras I-Summit, and Inter IISER E-Summit.</p>
-        </div>
-      </div>
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Leadership & Community</h3>
-          <p>Departmental Representative for Biological Sciences at IISER-K. Hospitality Head for Inquivesta XI (2026). Onboarded Krafton and NoScopeGaming as official sponsors. Managing class activities and acting as primary student liaison to faculty.</p>
-        </div>
-      </div>
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Social Impact</h3>
-          <p>Student Teacher at Ek Pehal — teaching English and Biology to underprivileged children (classes VI-IX). DKMS BMST Anti-cancer Drive Volunteer — blood stem cell and anti-cancer awareness drives.</p>
-        </div>
-      </div>
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Literature & Communication</h3>
-          <p>Enthusiast of Bangla Sahitya. Skilled in Public Speaking and Science Communication. Multilingual: English, Hindi, Bengali, German.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MUSIC -->
-  <section id="music">
-    <h2 data-aos="fade-up">// MUSIC</h2>
-    <div class="section-divider" data-aos="fade-up"></div>
-    <div class="music-section" data-aos="fade-up">
-      <h3 style="color: var(--accent); margin-bottom: 1.5rem;">Currently Listening To</h3>
-      <div class="spotify-embed">
-        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;"></iframe>
-      </div>
-
-      <h3 style="color: var(--accent); margin: 2.5rem 0 1rem;">Top Artists</h3>
-      <div class="albums-grid">
-        <div class="album-card" data-aos="fade-up" data-aos-delay="100">
-          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
+        <div class="tooltip-panel floating-island animate-on-scroll">
+          <div class="tp-header">YOUKTIK SAJJAN</div>
+          <div class="tp-meta">Type: Systems Architect<br/>Dimension: The End</div>
+          <hr class="tp-divider"/>
+          <div class="tp-skill">Artificial Intelligence</div>
+          <div class="tp-skill">Machine Learning</div>
+          <div class="tp-skill">Automation Architecture</div>
+          <div class="tp-skill">Quantitative Analysis</div>
+          <div class="tp-skill">Venture Strategy</div>
+          <hr class="tp-divider"/>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--endstone-mid);">LEVEL</div>
+          <div class="level-bar-track">
+            <div class="level-bar-fill" id="levelBar"></div>
           </div>
-          <div class="album-info"><h4>Artist 1</h4><p>Your top artist</p></div>
-        </div>
-        <div class="album-card" data-aos="fade-up" data-aos-delay="200">
-          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
-          </div>
-          <div class="album-info"><h4>Artist 2</h4><p>Your top artist</p></div>
-        </div>
-        <div class="album-card" data-aos="fade-up" data-aos-delay="300">
-          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
-          </div>
-          <div class="album-info"><h4>Artist 3</h4><p>Your top artist</p></div>
-        </div>
-        <div class="album-card" data-aos="fade-up" data-aos-delay="400">
-          <div style="width:100%;aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-music" style="font-size:3rem;color:var(--accent);opacity:0.5;"></i>
-          </div>
-          <div class="album-info"><h4>Artist 4</h4><p>Your top artist</p></div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--endstone-mid);margin-top:0.3rem;">[LEVELING UP] · STATUS: ACTIVE IN THE VOID</div>
         </div>
       </div>
 
-      <h3 style="color: var(--accent); margin: 2.5rem 0 1rem;">Albums On Repeat</h3>
-      <div class="spotify-embed">
-        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF?theme=0" width="100%" height="380" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;"></iframe>
+      <!-- PHILOSOPHY -->
+      <div class="philosophy-panel floating-island animate-on-scroll">
+        <div class="chorus-accent"></div>
+        <blockquote>"The End isn't a destination. It's the place where you stop playing by the world's rules and start designing your own."</blockquote>
+        <p>The same principle governs every system I build. Constraints are a starting point, not a ceiling. The leverage lives in the architecture — in the layers most people never bother to design.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--           PAGE 2 — PROJECTS             -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="projects" style="background: var(--void-deepest);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// projects.log ── 6 entries loaded</div>
+      <div class="projects-grid">
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">AI Trading Signal Engine</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Statistical ML</span>
+          </div>
+          <div class="card-desc">Modular trading signal engine using classification pipelines and statistical models, optimized for high-precision extraction from noisy financial time-series data.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">Financial Analytics Automation</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">REST APIs</span><span class="tag">Data Pipelines</span><span class="tag">Scheduling</span>
+          </div>
+          <div class="card-desc">Automated financial analytics workflows reducing manual reporting overhead by 60% through intelligent pipeline orchestration and event-driven processing.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">GTM Strategy Intelligence Framework</div>
+          <div class="tags">
+            <span class="tag">Market Research</span><span class="tag">Data Modeling</span><span class="tag">Scenario Simulation</span>
+          </div>
+          <div class="card-desc">Data-driven GTM modeling system integrating TAM/SAM/SOM projections with dynamic financial scenario simulation for early-stage venture analysis.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">ML Research Experiments</div>
+          <div class="tags">
+            <span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">Benchmarking</span><span class="tag">Optimization</span>
+          </div>
+          <div class="card-desc">Experimental ML architectures focused on efficiency benchmarking, optimization tuning, and comparative performance analysis across model families.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">Automation Architecture Framework</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Systems Design</span><span class="tag">Workflow Automation</span>
+          </div>
+          <div class="card-desc">Reusable automation framework reducing operational overhead across recurring analytical and data ingestion tasks — built to compose, not to patch.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+        <div class="endstone-panel project-card animate-on-scroll">
+          <div class="card-title">Quantitative Analysis Toolkit</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Statistics</span><span class="tag">Financial Modeling</span>
+          </div>
+          <div class="card-desc">Modular toolkit for quantitative pattern analysis and scenario modeling across financial and behavioral data domains.</div>
+          <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="card-link">View Repository →</a>
+        </div>
+
+      </div>
+      <div class="section-footer animate-on-scroll">&gt;&gt; more builds at <a href="https://github.com/ysdvision" target="_blank" rel="noopener">github.com/ysdvision</a></div>
+    </div>
+  </section>
+
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--           PAGE 3 — CULTURE              -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="culture" style="background: var(--void-base);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// journal.nbt ── personal data</div>
+      <div class="islands-timeline">
+
+        <div class="endstone-panel island-entry floating-island animate-on-scroll">
+          <div class="chorus-accent"></div>
+          <span class="biome-tag">[ SOUND_DIMENSION ]</span>
+          <h3>Music &amp; Classical Systems</h3>
+          <p>Deep engagement with Indian classical music and raagas. Music is not performance — it is pattern recognition at its most ancient. A raaga is an algorithm: a constrained system within which infinite variation emerges. The same discipline applies to designing ML architectures. Structure enables creativity. Constraint generates signal.</p>
+        </div>
+
+        <div class="endstone-panel island-entry floating-island animate-on-scroll">
+          <div class="chorus-accent"></div>
+          <span class="biome-tag">[ STRATEGY_LAYER ]</span>
+          <h3>Campus Tech &amp; Strategy</h3>
+          <p>Active at the intersection of startup ideation, systems thinking, and technical strategy within campus ecosystems. Focused on bridging engineering rigor with commercial clarity — where architecture meets market reality and where proof-of-concept becomes proof-of-leverage.</p>
+        </div>
+
+        <div class="endstone-panel island-entry floating-island animate-on-scroll">
+          <div class="chorus-accent"></div>
+          <span class="biome-tag">[ MULTIPLAYER_MODE ]</span>
+          <h3>Cross-disciplinary Collaboration</h3>
+          <p>Participation in collaborative tech and cultural initiatives that foster intersectional thinking between engineering, finance, and behavioral systems. Collaboration is a force multiplier — individual depth scaled by collective range.</p>
+        </div>
+
+        <div class="endstone-panel island-entry floating-island animate-on-scroll">
+          <div class="chorus-accent"></div>
+          <span class="biome-tag">[ RESEARCH_BRANCH ]</span>
+          <h3>Open Source &amp; Independent Research</h3>
+          <p>Building in public as a discipline. Every GitHub commit is a recorded design decision. Every repository is a system that can be forked, extended, composed. Independent ML experiments shared not for visibility, but for accountability.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--            PAGE 4 — MUSIC               -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="music" style="background: var(--void-deepest);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// now_playing.nbt</div>
+      <div class="music-panel">
+
+        <!-- Currently Playing -->
+        <div class="endstone-panel now-playing floating-island animate-on-scroll">
+          <div class="album-art">🎵</div>
+          <div class="track-info">
+            <div class="track-name">Connect via Spotify API</div>
+            <div class="track-artist">Artist — Album</div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Artists — Disc Slots -->
+        <div class="section-label animate-on-scroll" style="margin-top:2rem;">// top_artists.dat</div>
+        <div class="disc-grid animate-on-scroll">
+          <div class="disc-slot">DISC<br/>01</div>
+          <div class="disc-slot">DISC<br/>02</div>
+          <div class="disc-slot">DISC<br/>03</div>
+          <div class="disc-slot">DISC<br/>04</div>
+          <div class="disc-slot">DISC<br/>05</div>
+          <div class="disc-slot">DISC<br/>06</div>
+        </div>
+
+        <!-- Spotify Embeds -->
+        <div class="section-label animate-on-scroll">// on_repeat.nbt</div>
+        <div class="spotify-embeds animate-on-scroll">
+          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd?utm_source=generator&theme=0" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--            PAGE 5 — BLOG                -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="blog" style="background: var(--void-base);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// logs.txt ── written signal</div>
+      <div class="blog-list">
+
+        <div class="endstone-panel blog-card animate-on-scroll">
+          <div class="blog-date">DATE ── 2025-11-04</div>
+          <div class="blog-title">On Systems Thinking and Why Most People Build Tasks, Not Architecture</div>
+          <div class="blog-excerpt">The difference between a task and a system is leverage. One executes once; the other compounds. Most builders never cross that threshold.</div>
+          <div class="blog-footer">
+            <a href="#" class="blog-read">Read Entry →</a>
+            <span class="tag">systems</span><span class="tag">architecture</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel blog-card animate-on-scroll">
+          <div class="blog-date">DATE ── 2025-10-18</div>
+          <div class="blog-title">What Raagas Taught Me About Machine Learning</div>
+          <div class="blog-excerpt">A raaga constrains notes — not to limit expression, but to amplify it. The same principle governs model design: the right constraints unlock signal.</div>
+          <div class="blog-footer">
+            <a href="#" class="blog-read">Read Entry →</a>
+            <span class="tag">music</span><span class="tag">ML</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel blog-card animate-on-scroll">
+          <div class="blog-date">DATE ── 2025-09-22</div>
+          <div class="blog-title">The Leverage Equation: Why Compounding is the Only Strategy</div>
+          <div class="blog-excerpt">Linear effort, linear output. That's the trap. Architecture-level thinking breaks the linearity — every system you build multiplies every future system.</div>
+          <div class="blog-footer">
+            <a href="#" class="blog-read">Read Entry →</a>
+            <span class="tag">strategy</span><span class="tag">compounding</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel blog-card animate-on-scroll">
+          <div class="blog-date">DATE ── 2025-08-10</div>
+          <div class="blog-title">Notes from The End: Building When Nobody is Watching</div>
+          <div class="blog-excerpt">The End dimension is empty by design. No audience, no scoreboard. Just the architecture you choose to build. That's where the real work happens.</div>
+          <div class="blog-footer">
+            <a href="#" class="blog-read">Read Entry →</a>
+            <span class="tag">philosophy</span><span class="tag">deep-work</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel blog-card animate-on-scroll">
+          <div class="blog-date">DATE ── 2025-07-15</div>
+          <div class="blog-title">Why The End Dimension is the Best Metaphor for Deep Work</div>
+          <div class="blog-excerpt">No distractions. No fast travel. Just infinite void and the structures you deliberately place. The End is where intention becomes architecture.</div>
+          <div class="blog-footer">
+            <a href="#" class="blog-read">Read Entry →</a>
+            <span class="tag">minecraft</span><span class="tag">focus</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--          PAGE 6 — VENTURES              -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="ventures" style="background: var(--void-deepest);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// ventures.yml ── building in the end</div>
+
+      <div class="venture-philosophy floating-island animate-on-scroll">
+        <h2>BUILDING FROM THE VOID</h2>
+        <p>The End is where you go after you've finished the main quest. There are no tutorials here. No spawn points. Just the architecture you design and the systems you choose to build. Every venture I engage with lives at this edge — where others stop and the real building begins.</p>
       </div>
 
-      <p style="margin-top:2rem; font-size:0.85rem; color: var(--text-secondary);">
-        <i class="fab fa-spotify" style="color:#1DB954;"></i>
-        Connect your Spotify via <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">Spotify Web API</a> for live data.
-        Use <a href="https://developer.spotify.com/documentation/embeds" target="_blank">Spotify Embeds</a> for quick integration.
-      </p>
+      <div class="ventures-grid">
+        <div class="endstone-panel venture-card animate-on-scroll">
+          <div class="venture-name">AI Analytics Infrastructure</div>
+          <span class="stage-tag stage-building">BUILDING</span>
+          <p>AI-powered analytics infrastructure for early-stage startups. Modular data pipelines that scale from prototype to production without architectural rewrites.</p>
+          <div class="domain-tags">
+            <span class="tag">AI</span><span class="tag">Analytics</span><span class="tag">Infrastructure</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel venture-card animate-on-scroll">
+          <div class="venture-name">Automation Consulting</div>
+          <span class="stage-tag stage-ideation">IDEATION</span>
+          <p>Automation consulting for financial operations teams. Identifying high-leverage automation targets in recurring analytical and compliance workflows.</p>
+          <div class="domain-tags">
+            <span class="tag">Fintech</span><span class="tag">Automation</span><span class="tag">Consulting</span>
+          </div>
+        </div>
+
+        <div class="endstone-panel venture-card animate-on-scroll">
+          <div class="venture-name">Quantitative Research Toolkit</div>
+          <span class="stage-tag stage-live">LIVE</span>
+          <p>Open-source quantitative research toolkit for pattern analysis and scenario modeling. Built to compose, extend, and fork — designed for the research community.</p>
+          <div class="domain-tags">
+            <span class="tag">Open Source</span><span class="tag">Quantitative</span><span class="tag">Research</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="venture-quote animate-on-scroll">"The best ventures are built in the void — before the world knows they're possible."</div>
     </div>
   </section>
 
-  <!-- CV -->
-  <section id="cv">
-    <h2 data-aos="fade-up">// CURRICULUM VITAE</h2>
-    <div class="section-divider" data-aos="fade-up"></div>
-    <p data-aos="fade-up" style="margin-bottom: 1rem;">
-      This CV loads directly from the source file — any updates to the CV are reflected here automatically.
-    </p>
-    <div class="cv-frame-wrapper" data-aos="fade-up">
-      <iframe src="cv.html" title="Youktik Sajjan CV"></iframe>
+  <div class="obsidian-divider" style="max-width:1100px;"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--           PAGE 7 — CONTACT              -->
+  <!-- ════════════════════════════════════════ -->
+  <section id="contact" style="background: var(--void-deepest);">
+    <div class="container">
+      <div class="section-label animate-on-scroll">// send_message.sh</div>
+      <div class="contact-wrap">
+
+        <div class="portal-frame animate-on-scroll">
+          <div class="portal-frame-inner"></div>
+        </div>
+
+        <div class="contact-heading animate-on-scroll">OPEN THE GATEWAY</div>
+        <div class="contact-sub animate-on-scroll">Located somewhere in The End. Reachable via the channels below.</div>
+
+        <div class="contact-methods animate-on-scroll">
+          <div class="contact-row">
+            <span class="cr-label">Email</span>
+            <span class="cr-sep">──</span>
+            <a href="mailto:youktik@domain.com" class="cr-value">youktik@domain.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="cr-label">GitHub</span>
+            <span class="cr-sep">──</span>
+            <a href="https://github.com/ysdvision" target="_blank" rel="noopener" class="cr-value">github.com/ysdvision</a>
+          </div>
+          <div class="contact-row">
+            <span class="cr-label">LinkedIn</span>
+            <span class="cr-sep">──</span>
+            <a href="https://linkedin.com/in/youktik" target="_blank" rel="noopener" class="cr-value">linkedin.com/in/youktik</a>
+          </div>
+          <div class="contact-row">
+            <span class="cr-label">Twitter/X</span>
+            <span class="cr-sep">──</span>
+            <a href="https://twitter.com/ysdvision" target="_blank" rel="noopener" class="cr-value">@ysdvision</a>
+          </div>
+        </div>
+
+        <form class="contact-form animate-on-scroll" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label>Name:</label>
+          <input type="text" name="name" required/>
+          <label>Email:</label>
+          <input type="email" name="email" required/>
+          <label>Message:</label>
+          <textarea name="message" required></textarea>
+          <button type="submit" class="btn-submit">SEND THROUGH THE VOID →</button>
+        </form>
+
+      </div>
     </div>
-    <a href="cv.html" target="_blank" class="cv-download" data-aos="fade-up">
-      <i class="fas fa-external-link-alt"></i> Open Full CV
-    </a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══════ FOOTER ═══════ -->
   <footer>
-    <div class="footer-links">
-      <a href="https://github.com/ysdvision" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/youktik-sajjan/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <div class="footer-logo">⬡ YSD</div>
+    <div class="footer-copy">© 2026 Youktik Sajjan</div>
+    <div class="footer-tagline">Built from the void. Compounding always.</div>
+    <div class="footer-socials">
+      <a href="https://github.com/ysdvision" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/youktik" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#music">Spotify</a>
+      <a href="https://twitter.com/ysdvision" target="_blank" rel="noopener">Twitter/X</a>
     </div>
-    <p style="margin-top:1rem;">&copy; 2026 Youktik Sajjan</p>
-    <p style="font-size:0.8rem;">Built with intention. Powered by systems thinking.</p>
+    <div class="footer-url">ysdvision.github.io</div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- ═══════════════════════════════ -->
+  <!--           JAVASCRIPT           -->
+  <!-- ═══════════════════════════════ -->
   <script>
-    // Initialize AOS scroll animations
-    AOS.init({ once: true, duration: 800, offset: 80 });
+    /* ─── Void Particles ─── */
+    (function initParticles() {
+      const c = document.getElementById('void-particles');
+      for (let i = 0; i < 60; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        const t = Math.random();
+        let sz, col, op;
+        if (t < 0.6) { sz = 1; col = '#c084fc'; op = 0.1 + Math.random() * 0.15; }
+        else if (t < 0.9) { sz = 2; col = '#d4cfa8'; op = 0.08 + Math.random() * 0.12; }
+        else { sz = 3; col = '#67e8f9'; op = 0.15 + Math.random() * 0.15; }
+        const drift = (Math.random() - 0.5) * 60;
+        const dur = 14 + Math.random() * 20;
+        const delay = Math.random() * 10;
+        p.style.cssText = `width:${sz}px;height:${sz}px;background:${col};left:${Math.random()*100}%;top:${Math.random()*100}%;--p-opacity:${op};--p-drift:${drift}px;animation-duration:${dur}s;animation-delay:${delay}s;`;
+        c.appendChild(p);
+      }
+    })();
 
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    /* ─── Typewriter ─── */
+    (function initTypewriter() {
+      const el = document.getElementById('typewriter');
+      const lines = [
+        '> Initializing systems architect...',
+        '> Loading: ML pipelines, automation frameworks, venture strategy...',
+        '> Status: BUILDING \u2588'
+      ];
+      let li = 0, ci = 0;
+      function tick() {
+        if (li >= lines.length) { li = 0; ci = 0; setTimeout(tick, 2500); return; }
+        const line = lines[li];
+        if (ci <= line.length) {
+          el.innerHTML = line.substring(0, ci) + (ci < line.length ? '<span class="cursor">\u2588</span>' : '');
+          ci++;
+          setTimeout(tick, 30 + Math.random() * 30);
+        } else {
+          setTimeout(() => { li++; ci = 0; tick(); }, 2000);
+        }
+      }
+      tick();
+    })();
 
-    // Close menu on link click (mobile)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
+    /* ─── Scroll Animations ─── */
+    (function initScrollAnimations() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 120);
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.animate-on-scroll').forEach(el => obs.observe(el));
+    })();
 
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      nav.style.boxShadow = window.scrollY > 50
-        ? '0 4px 20px rgba(0,0,0,0.4)'
-        : 'none';
-    });
+    /* ─── Level Bar Animation ─── */
+    (function initLevelBar() {
+      const bar = document.getElementById('levelBar');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { bar.classList.add('animate'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.5 });
+      obs.observe(bar);
+    })();
+
+    /* ─── Active Nav Highlight ─── */
+    (function initActiveNav() {
+      const sections = document.querySelectorAll('section[id]');
+      const links = document.querySelectorAll('.nav-links a');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const a = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { threshold: 0.25 });
+      sections.forEach(s => obs.observe(s));
+    })();
+
+    /* ─── Mobile Menu ─── */
+    function toggleMobile() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
   </script>
+
 </body>
 </html>
