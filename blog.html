@@ -68,6 +68,51 @@
       background: rgba(10,11,18,0.82);
       border-bottom: 1px solid var(--chorus-dim);
     }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-glyph {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      gap: 1px;
+      padding: 3px;
+      background: rgba(15,16,32,0.95);
+      border: 1px solid var(--chorus-dim);
+      box-shadow: inset 0 0 12px rgba(76,29,149,0.35), 0 0 16px rgba(192,132,252,0.12);
+    }
+    .logo-pixel { background: transparent; }
+    .logo-pixel.on { background: var(--endstone); }
+    .logo-pixel.accent { background: var(--chorus); }
+    .logo-pixel.skin { background: #c68642; }
+    .logo-pixel.skin-light { background: #e0ac69; }
+    .logo-pixel.hair { background: #4b2e1f; }
+    .logo-pixel.eye { background: #67e8f9; }
+    .logo-pixel.shadow { background: #2b1b14; }
+    .logo-meta {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--chorus);
+      letter-spacing: 0.08em;
+    }
+    .logo-subtitle {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      color: var(--stone);
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: 0.16em;
+    }
     .nav-link {
       font-family: 'Share Tech Mono', monospace; font-size: 11px; text-transform: uppercase;
       color: var(--stone); letter-spacing: 0.05em; padding: 6px 10px;
@@ -175,12 +220,28 @@
 
   <!-- ═══════ NAV ═══════ -->
   <nav class="nav-glass fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3">
-    <a href="index.html" class="font-pixel text-chorus tracking-wider" style="font-size:11px;text-decoration:none;">⬡ YSD</a>
+    <a href="index.html" class="logo-mark">
+      <span class="logo-glyph" aria-hidden="true">
+        <span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel skin"></span><span class="logo-pixel skin"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin"></span><span class="logo-pixel skin"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel skin"></span><span class="logo-pixel eye"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel eye"></span><span class="logo-pixel skin"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel skin"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel shadow"></span><span class="logo-pixel shadow"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel skin"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin-light"></span><span class="logo-pixel skin"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel hair"></span><span class="logo-pixel accent"></span><span class="logo-pixel accent"></span><span class="logo-pixel transparent"></span><span class="logo-pixel transparent"></span><span class="logo-pixel on"></span><span class="logo-pixel on"></span><span class="logo-pixel hair"></span>
+        <span class="logo-pixel transparent"></span><span class="logo-pixel accent"></span><span class="logo-pixel transparent"></span><span class="logo-pixel transparent"></span><span class="logo-pixel on"></span><span class="logo-pixel transparent"></span><span class="logo-pixel on"></span><span class="logo-pixel transparent"></span>
+      </span>
+      <span class="logo-meta">
+        <span class="logo-title">YS</span>
+        <span class="logo-subtitle">hero mode</span>
+      </span>
+    </a>
     <div class="hidden md:flex items-center gap-1">
       <a href="index.html#cv" class="nav-link">cv</a>
       <a href="index.html#about" class="nav-link">about</a>
       <a href="index.html#projects" class="nav-link">projects</a>
       <a href="index.html#ventures" class="nav-link">ventures</a>
+      <a href="index.html#gallery" class="nav-link">gallery</a>
       <a href="blog.html" class="nav-link active">blog</a>
       <a href="index.html#contact" class="nav-link">contact</a>
     </div>

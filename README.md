@@ -1,62 +1,58 @@
-# ⬡ Youktik Sajjan — The End Dimension Portfolio
+# Youktik Sajjan — End Dimension Portfolio
 
-**ysdvision.github.io**
+Static GitHub Pages portfolio with a Minecraft End-inspired interface, an arcade-style dragon canvas background, and a separate blog page for essays, poetry, and literature.
 
-A Minecraft End-dimension themed developer portfolio. Void black backgrounds, chorus plant accents, floating endstone islands, and pixel-perfect block geometry — rendered as a systems architect's mind palace.
+## Files
 
-## Sections
+- `index.html` — main portfolio page
+- `blog.html` — separate writing page
+- `cv.html` — embedded CV document
+- `README.md` — project notes
 
-- **About** — Hero, bio, Minecraft-style tooltip panel, philosophy quote
-- **Projects** — 6-card grid with hover glow + left-border reveal
-- **Culture** — Floating island timeline with chorus plant accents
-- **Music** — Jukebox-style panel, disc slots, Spotify embeds
-- **Blog** — Book & quill log entries (placeholder posts)
-- **Ventures** — Dragon Egg section with stage-tagged venture cards
-- **Contact** — End Gateway portal animation + contact form
+## Current sections
 
-## Design System
+- About
+- Projects
+- Ventures
+- Culture
+- Music
+- Gallery (`Coming Soon`)
+- Contact
+- CV (final section)
+- Blog / Poetry / Literature page in `blog.html`
 
-| Token | Value |
-|---|---|
-| Void Deepest | `#050508` |
-| Void Base | `#0a0b12` |
-| Void Surface | `#0f1020` |
-| Endstone Bright | `#d4cfa8` |
-| Chorus Bloom | `#c084fc` |
-| Chorus Pale | `#e9d5ff` |
-| Portal Cyan | `#67e8f9` (one CTA only) |
+## Visual system
 
-## Typography
+- Void background: `#050508` / `#0a0b12`
+- Surfaces: `#0f1020` / `#161830`
+- Accent: chorus purple `#c084fc`
+- CTA: portal cyan `#67e8f9`
+- Fonts: Press Start 2P, VT323, Share Tech Mono, Nunito
+- Geometry: `0px` border radius everywhere
 
-| Tier | Font | Usage |
-|---|---|---|
-| 1 | Press Start 2P | Hero name, nav logo |
-| 2 | VT323 | Section headers, card titles |
-| 3 | Share Tech Mono | Labels, tags, nav links |
-| 4 | Nunito | Body copy |
+## Interactive features
 
-## Tech Stack
+- Fixed canvas background with a 2D arcade-style Ender Dragon
+- Dragon follows cursor movement and breathes fire
+- Ambient Minecraft mobs spawn from screen edges
+- GitHub project fetch for the selected public repo list
+- Scroll-triggered reveal animations
+- Separate blog page with category filters
 
-- HTML + Tailwind CDN + Vanilla JS
-- Google Fonts (Press Start 2P, VT323, Share Tech Mono, Nunito)
-- CSS custom properties for full color system
-- IntersectionObserver scroll animations
-- 60 void particles (CSS animation, no canvas)
-- Formspree for contact form
+## Publish to GitHub Pages
 
-## Design Rules
+1. Create or use the repository `ysdvision.github.io`.
+2. Upload these files to the repository root:
+	- `index.html`
+	- `blog.html`
+	- `cv.html`
+	- `README.md`
+3. In GitHub repository settings, open `Pages`.
+4. Set source to `Deploy from a branch`.
+5. Choose branch `main` and folder `/ (root)`.
+6. Wait for Pages to build, then open `https://ysdvision.github.io`.
 
-- **0px border-radius everywhere** — block geometry
-- Chorus purple is the **one accent**; portal cyan for **one CTA only**
-- Every section has a `// code-style` label
-- Mobile-first, works at 375px
-- No heavy libraries — loads fast on GitHub Pages
+## Notes
 
-## Deployment
-
-```
-1. Create repo: ysdvision.github.io
-2. Push index.html to root of main branch
-3. Settings → Pages → Source: main / root
-4. Live at https://ysdvision.github.io
-```
+- The workspace is not currently a git repository, so no local `git add` / `git commit` / `git push` was possible here.
+- The files themselves are ready to upload or commit from your GitHub repo folder.
